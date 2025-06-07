@@ -1,0 +1,333 @@
+<html><head>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <meta charset="utf-8"/>
+    </head>
+    <body class="bg-slate-50">
+    <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+    <div class="flex flex-1 justify-center py-5">
+    <aside class="flex flex-col w-72 p-4 bg-white border-r border-slate-200">
+    <div class="flex items-center gap-3 p-2">
+    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRDcUez7sQQ0062PozPk39W0xXMTqLBD4bgV1fLBv-ZxdibCRnAIPYZzOPV4OQZS3oyvVIVUlOMrj_XpFsmkzg3agY8Ysf9fofoSdSipBEC_8fLJT5lXXzRIRNyjxOwgEzcVYOyy4VzhEMaq2ih119jm9jHkb62-EdRF0IWNCTSQR5Ap0wK2cZUbz6WSJqgn-r2GZ-ylKK4bzYH8EAVlAErQutbXFiRdAV05AAvClxQzfLKrJLVYRhwCGt7c11RhEqs8H2qbPKVuo9");'></div>
+    <div class="flex flex-col">
+    <h1 class="text-slate-800 text-base font-semibold">Sophia</h1>
+    <p class="text-slate-500 text-sm">Personal</p>
+    </div>
+    </div>
+    <nav class="mt-6 flex flex-col gap-1">
+    <a class="flex items-center gap-3 px-3 py-2.5 text-slate-700 hover:bg-slate-100 rounded-lg group" href="#">
+    <span class="material-icons text-slate-500 group-hover:text-slate-700">home</span>
+    <p class="text-sm font-medium">Home</p>
+    </a>
+    <a class="flex items-center gap-3 px-3 py-2.5 text-slate-900 bg-slate-100 rounded-lg group" href="#">
+    <span class="material-icons text-slate-700">task_alt</span>
+    <p class="text-sm font-medium">My Tasks</p>
+    </a>
+    <a class="flex items-center gap-3 px-3 py-2.5 text-slate-700 hover:bg-slate-100 rounded-lg group" href="#">
+    <span class="material-icons text-slate-500 group-hover:text-slate-700">track_changes</span>
+    <p class="text-sm font-medium">Goals</p>
+    </a>
+    <a class="flex items-center gap-3 px-3 py-2.5 text-slate-700 hover:bg-slate-100 rounded-lg group" href="#">
+    <span class="material-icons text-slate-500 group-hover:text-slate-700">folder_open</span>
+    <p class="text-sm font-medium">Projects</p>
+    </a>
+    <a class="flex items-center gap-3 px-3 py-2.5 text-slate-700 hover:bg-slate-100 rounded-lg group" href="#">
+    <span class="material-icons text-slate-500 group-hover:text-slate-700">chat_bubble_outline</span>
+    <p class="text-sm font-medium">Chat</p>
+    </a>
+    </nav>
+    <div class="mt-auto p-2">
+    <button class="flex w-full items-center justify-center gap-2 rounded-lg bg-slate-800 px-4 py-2.5 text-white hover:bg-slate-700">
+    <span class="material-icons">logout</span>
+    <span class="text-sm font-medium">Logout</span>
+    </button>
+    </div>
+    </aside>
+    <main class="layout-content-container flex flex-col max-w-[960px] flex-1 bg-white shadow-sm">
+    <header class="flex flex-wrap justify-between items-center gap-4 p-6 border-b border-slate-200">
+    <h2 class="text-slate-800 text-3xl font-bold">My Tasks</h2>
+    <button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors">
+    <span class="material-icons">add</span>
+    <span class="truncate">New Task</span>
+    </button>
+    </header>
+    <div class="border-b border-slate-200">
+    <nav class="flex px-6 gap-6">
+    <a class="flex flex-col items-center justify-center border-b-2 border-blue-600 text-blue-600 py-3" href="#">
+    <p class="text-sm font-semibold">All</p>
+    </a>
+    <a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 py-3" href="#">
+    <p class="text-sm font-medium">In Progress</p>
+    </a>
+    <a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 py-3" href="#">
+    <p class="text-sm font-medium">Completed</p>
+    </a>
+    </nav>
+    </div>
+    <section class="px-6 py-8">
+    <h3 class="text-slate-800 text-2xl font-bold mb-6">Today</h3>
+    <div class="grid grid-cols-1 @md:grid-cols-2 gap-6">
+    <div class="bg-slate-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out group">
+    <div class="flex items-center justify-between mb-4">
+    <h4 class="text-slate-800 text-lg font-semibold">Review project proposal</h4>
+    <button class="p-2 rounded-full hover:bg-slate-200 text-slate-500 hover:text-slate-700 transition-colors">
+    <span class="material-icons text-xl">more_horiz</span>
+    </button>
+    </div>
+    <p class="text-slate-600 text-sm mb-1">Project: Phoenix Launch</p>
+    <p class="text-slate-500 text-sm mb-4">Due Today</p>
+    <div class="relative pt-1 mb-4">
+    <div class="overflow-hidden h-3 mb-2 text-xs flex rounded-full bg-slate-200">
+    <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-sky-500 to-indigo-500" style="width:60%"></div>
+    </div>
+    <div class="flex justify-between text-xs text-slate-500">
+    <span>Draft</span>
+    <span>Review</span>
+    <span>Final</span>
+    </div>
+    <div class="absolute left-0 top-[-2px] w-full flex justify-between">
+    <div class="w-2.5 h-2.5 rounded-full bg-sky-500 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-sky-500 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    </div>
+    </div>
+    <div class="flex items-center justify-between mt-6">
+    <div class="flex -space-x-2">
+    <img alt="User 1" class="inline-block size-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOc0ozkyV_eYB-EeCjsMw-I1Qd-SAeCQp_t2woIJPxZcnCuM1C9cI_2tXRwaqJojofVHp5wdXaLlD7A2UIiEr_YEsAdLxf-Y6tM5eqhnJL5BxOYMbNiBltf0SVu6dYUINItA-OtKB7e4Q7_hago26fL0In7FZNSRnufN0HzmjAG_y8Cg3zSGqitKPB5F9XnixnYGtcLhUDp_QHNuD7AokzgBxsEMHQeMqj53AMNtsg65KwUq18E0ATOoCKjjLqv2cZNyc-2Afr1qJY"/>
+    <img alt="User 2" class="inline-block size-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZcndm8hOa3GrlMAnTEnqyz9vRCAsANMdBcL2zJQfz-6fyvZEZObUN_uJaLRUzBT6zL_rXQOkKMH5vqd1Pv1D70xcIABZ27RLxWjwiOddVqWSCL5FnsxZrTDQ0FoXXp2BjAMIec5VsRzk74E7nFXAZojlOMnROsz9SGFGlawjmmrfvbmGiXVNxhu5vb95U8dY6x6Fzvv2q_QUTHiZyX_AFRaZzGXgGyDK4SlE4iYWubFvpSheJFwXVGUZHFXRoUGKSR8x-UrZ9E-DW"/>
+    </div>
+    <div class="flex items-center gap-2">
+    <button class="flex items-center justify-center gap-2 rounded-lg border border-slate-300 hover:border-blue-500 px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-blue-600 transition-colors">
+    <span class="material-icons text-sm">chat_bubble_outline</span>
+                                                Inquire with Assistant
+                                            </button>
+    <button class="flex items-center justify-center rounded-full border-2 border-slate-300 group-hover:border-green-500 size-8 shrink-0 text-transparent group-hover:text-green-500 transition-colors">
+    <span class="material-icons text-lg">check</span>
+    </button>
+    </div>
+    </div>
+    </div>
+    <div class="bg-slate-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out group">
+    <div class="flex items-center justify-between mb-4">
+    <h4 class="text-slate-800 text-lg font-semibold">Prepare presentation slides</h4>
+    <button class="p-2 rounded-full hover:bg-slate-200 text-slate-500 hover:text-slate-700 transition-colors">
+    <span class="material-icons text-xl">more_horiz</span>
+    </button>
+    </div>
+    <p class="text-slate-600 text-sm mb-1">Project: Marketing Campaign Q3</p>
+    <p class="text-slate-500 text-sm mb-4">Due Today</p>
+    <div class="relative pt-1 mb-4">
+    <div class="overflow-hidden h-3 mb-2 text-xs flex rounded-full bg-slate-200">
+    <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-amber-500 to-orange-500" style="width:25%"></div>
+    </div>
+    <div class="flex justify-between text-xs text-slate-500">
+    <span>Research</span>
+    <span>Outline</span>
+    <span>Design</span>
+    <span>Finalize</span>
+    </div>
+    <div class="absolute left-0 top-[-2px] w-full flex justify-between">
+    <div class="w-2.5 h-2.5 rounded-full bg-amber-500 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    </div>
+    </div>
+    <div class="flex items-center justify-between mt-6">
+    <div class="flex -space-x-2">
+    <img alt="User 1" class="inline-block size-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnpM23HJR6gAmMpaYvY1cBvF8vDCKaT6o1QqNVJwUWO68tbjhusaRbp2mIqrKo1lBfl3gZBnp2ldwL5jNskpezCYIduwUmfMq_EVDSHpikuFYsUOcz0pMA52JgRTpWKJykSD6DW_UWBHYGky0fSuw2_STK9GrSm8knCmuN1ZwyAZeiV7WMWeSL3br715DXoBfjJpIp08HRERjK2S1Hvhp97ZyxpuYFx_ZhRMRHyTDfDmeadD8-MtpGJ298WEKyFGtEhCg0W0lPaay0"/>
+    </div>
+    <div class="flex items-center gap-2">
+    <button class="flex items-center justify-center gap-2 rounded-lg border border-slate-300 hover:border-blue-500 px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-blue-600 transition-colors">
+    <span class="material-icons text-sm">chat_bubble_outline</span>
+                                                Inquire with Assistant
+                                            </button>
+    <button class="flex items-center justify-center rounded-full border-2 border-slate-300 group-hover:border-green-500 size-8 shrink-0 text-transparent group-hover:text-green-500 transition-colors">
+    <span class="material-icons text-lg">check</span>
+    </button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    <section class="px-6 py-8">
+    <h3 class="text-slate-800 text-2xl font-bold mb-6">Upcoming</h3>
+    <div class="grid grid-cols-1 @md:grid-cols-2 gap-6">
+    <div class="bg-slate-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out group">
+    <div class="flex items-center justify-between mb-4">
+    <h4 class="text-slate-800 text-lg font-semibold">Schedule team meeting</h4>
+    <button class="p-2 rounded-full hover:bg-slate-200 text-slate-500 hover:text-slate-700 transition-colors">
+    <span class="material-icons text-xl">more_horiz</span>
+    </button>
+    </div>
+    <p class="text-slate-600 text-sm mb-1">Project: Internal Sync</p>
+    <p class="text-slate-500 text-sm mb-4">Due Tomorrow</p>
+    <div class="relative pt-1 mb-4">
+    <div class="overflow-hidden h-3 mb-2 text-xs flex rounded-full bg-slate-200">
+    <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-teal-500 to-cyan-500" style="width:0%"></div>
+    </div>
+    <div class="flex justify-between text-xs text-slate-500">
+    <span>Propose Dates</span>
+    <span>Send Invite</span>
+    <span>Confirm</span>
+    </div>
+    <div class="absolute left-0 top-[-2px] w-full flex justify-between">
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    </div>
+    </div>
+    <div class="flex items-center justify-between mt-6">
+    <div class="flex -space-x-2">
+    <img alt="User 1" class="inline-block size-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_9NZZC6E7RAiKjiJC4XHN4okeWWFaTeyo-YF51asawP0HIUswH36FLBuReILGjtKCZbRcPMdq-lQmgmcilNZC-d_dPN37tQBo28YzNpnNYRtwWYWNq0GlW9mkaOu5onUR_W0DUE2BjeyF5FbnO5kG55w1RMyOXxM1kswwot5Xrph5OYb3Bjdy1huLNrecbQt0iAIqnOO9VacLaZ9y9CegOUUhN1g3Fbrtf5H8eTxMSwDS5yxAqdH5Gbu08nRwpbNyZKkmdjD33i6v"/>
+    <img alt="User 2" class="inline-block size-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARXuNhZVsw7R1qbmSb1yraxtcjERoQDDd1HsqBvGwKyyCnXHzyk1WmhD6Xy212xJlRjiDBkbmbio3I6q0RAyf3kOwFOu9lwxFUgLQLuZar2yIu_fQ6f_t0n08tfqSnn0f8otEETP2jQMX9dS570KxBFRYc99QiYV3fHOsESGNLKckNkpc4sBYpPNGIhVfzCc1tlOu3wm7oA6AGdku_ZAUfnWzXkEO_wj23WM83909mZc1nS58dJLWN1q2PcEBBbHB0QE6r-nUHnWRd"/>
+    <img alt="User 3" class="inline-block size-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOUWzOY-qWxqUpAaSyrLRuyhmKGOYYWu6DzFehCmJxXQDlOt6V3CQaXuy5YxsQ6Nte9fbZFSe87wqijknlJSceklbJ-AJqh2PPKw0wnlN2TiDxVdZjScT3pL6cMlk-s6g6pb0no_Xs3uBFgywD7_l7GmQ6yIilYvrgJ1hmnfJ8xXrtxvunGOpx05xIwemmOUyvBywPP4-vGm_qjaoyZ4U4bybvaJ3fgxSn99ZmlXp01ujw0yipGdNWyexn6AKZHpS4DcaIjHM60PSY"/>
+    </div>
+    <div class="flex items-center gap-2">
+    <button class="flex items-center justify-center gap-2 rounded-lg border border-slate-300 hover:border-blue-500 px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-blue-600 transition-colors">
+    <span class="material-icons text-sm">chat_bubble_outline</span>
+                                                Inquire with Assistant
+                                            </button>
+    <button class="flex items-center justify-center rounded-full border-2 border-slate-300 group-hover:border-green-500 size-8 shrink-0 text-transparent group-hover:text-green-500 transition-colors">
+    <span class="material-icons text-lg">check</span>
+    </button>
+    </div>
+    </div>
+    </div>
+    <div class="bg-slate-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out group">
+    <div class="flex items-center justify-between mb-4">
+    <h4 class="text-slate-800 text-lg font-semibold">Finalize budget report</h4>
+    <button class="p-2 rounded-full hover:bg-slate-200 text-slate-500 hover:text-slate-700 transition-colors">
+    <span class="material-icons text-xl">more_horiz</span>
+    </button>
+    </div>
+    <p class="text-slate-600 text-sm mb-1">Project: Q4 Financials</p>
+    <p class="text-slate-500 text-sm mb-4">Due in 2 days</p>
+    <div class="relative pt-1 mb-4">
+    <div class="overflow-hidden h-3 mb-2 text-xs flex rounded-full bg-slate-200">
+    <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-purple-500 to-pink-500" style="width:80%"></div>
+    </div>
+    <div class="flex justify-between text-xs text-slate-500">
+    <span>Data Collation</span>
+    <span>Drafting</span>
+    <span>Review</span>
+    <span>Approval</span>
+    </div>
+    <div class="absolute left-0 top-[-2px] w-full flex justify-between">
+    <div class="w-2.5 h-2.5 rounded-full bg-purple-500 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-purple-500 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-purple-500 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    </div>
+    </div>
+    <div class="flex items-center justify-between mt-6">
+    <div class="flex -space-x-2">
+    <img alt="User 1" class="inline-block size-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtkwIizWdDjlL5Er1p2ZHKrsKxEiu8p7scdfGoS315d4cDMwbBzmUNxf2j505Fl4vq8eUaXMhmqSbqPe5uIBt4wv47MA9b6gbhbb6f9YJii7jzCm1ZKMovOnNxsUAifURqVFPm557kPYNI-0oC4C92zirD5Eo_56kpdbyi7gWtWjcajgZoYLJJnL8UZAv5YzcXCROBdevyKakJ1lqVXm05YFUyODRCTBnb7idLVarz-Da11RoAHlemU9BpHIgK6ucLcfIrdpJOPuAS"/>
+    <img alt="User 2" class="inline-block size-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRkJ1rnfuwR-HyH_nQAthuN27U8QJexH0aXpI6SrQwgrL7i0lK6z7RHMhdOH86wJM60NrAp4CM5YPaaalIYLf95gZkZ0bX2_KUUsSWCIV60iSXjPbH8C_-3Gqidd-WO3mOwqEz7wy0YF6oKLnlCi0AHndaCO6MiTDo5SBiqpSu8M8M58hmmsRwNySqSAtC6ouwd-hi0eYENULBivLkq1QbL6z-pkLBnJrTrlRhFcXI5ZImZ-hOqUO00rhFCvKceavQI1mMK3VIq_Vt"/>
+    </div>
+    <div class="flex items-center gap-2">
+    <button class="flex items-center justify-center gap-2 rounded-lg border border-slate-300 hover:border-blue-500 px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-blue-600 transition-colors">
+    <span class="material-icons text-sm">chat_bubble_outline</span>
+                                                Inquire with Assistant
+                                            </button>
+    <button class="flex items-center justify-center rounded-full border-2 border-slate-300 group-hover:border-green-500 size-8 shrink-0 text-transparent group-hover:text-green-500 transition-colors">
+    <span class="material-icons text-lg">check</span>
+    </button>
+    </div>
+    </div>
+    </div>
+    <div class="bg-slate-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out group">
+    <div class="flex items-center justify-between mb-4">
+    <h4 class="text-slate-800 text-lg font-semibold">Follow up with clients</h4>
+    <button class="p-2 rounded-full hover:bg-slate-200 text-slate-500 hover:text-slate-700 transition-colors">
+    <span class="material-icons text-xl">more_horiz</span>
+    </button>
+    </div>
+    <p class="text-slate-600 text-sm mb-1">Project: Client Outreach Initiative</p>
+    <p class="text-slate-500 text-sm mb-4">Due in 3 days</p>
+    <div class="relative pt-1 mb-4">
+    <div class="overflow-hidden h-3 mb-2 text-xs flex rounded-full bg-slate-200">
+    <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-lime-500 to-emerald-500" style="width:40%"></div>
+    </div>
+    <div class="flex justify-between text-xs text-slate-500">
+    <span>Segment List</span>
+    <span>Draft Emails</span>
+    <span>Schedule</span>
+    <span>Monitor</span>
+    </div>
+    <div class="absolute left-0 top-[-2px] w-full flex justify-between">
+    <div class="w-2.5 h-2.5 rounded-full bg-lime-500 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-lime-500 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    </div>
+    </div>
+    <div class="flex items-center justify-between mt-6">
+    <div class="flex -space-x-2">
+    <img alt="User 1" class="inline-block size-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXXvHJ_8hQEn00auiI4JT8KSOMeBRYHdVp_34SO2v9HiS538ICTe42RahCcGozGmfho66nPZLydIRbMnjsonifx3h0jdyv-243WHsQPHbaYmYMprzj57Azi6y6BeHuYgQFcTSCyr0VSPwXa527dytuc47v8sozyXlWggAdEtUzW9u8rXehxuWyrw1rBsJQa6hlwlzsj14XNCtaDtU93bd_F8Sc4dT_B-epgsiYcCX6s-rir1EX3flq6-6t_SaqoE-HycpfnTQ1f0ML"/>
+    </div>
+    <div class="flex items-center gap-2">
+    <button class="flex items-center justify-center gap-2 rounded-lg border border-slate-300 hover:border-blue-500 px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-blue-600 transition-colors">
+    <span class="material-icons text-sm">chat_bubble_outline</span>
+                                                Inquire with Assistant
+                                            </button>
+    <button class="flex items-center justify-center rounded-full border-2 border-slate-300 group-hover:border-green-500 size-8 shrink-0 text-transparent group-hover:text-green-500 transition-colors">
+    <span class="material-icons text-lg">check</span>
+    </button>
+    </div>
+    </div>
+    </div>
+    <div class="bg-slate-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out group">
+    <div class="flex items-center justify-between mb-4">
+    <h4 class="text-slate-800 text-lg font-semibold">Plan next quarter's goals</h4>
+    <button class="p-2 rounded-full hover:bg-slate-200 text-slate-500 hover:text-slate-700 transition-colors">
+    <span class="material-icons text-xl">more_horiz</span>
+    </button>
+    </div>
+    <p class="text-slate-600 text-sm mb-1">Project: Strategic Planning Q1</p>
+    <p class="text-slate-500 text-sm mb-4">Due in 4 days</p>
+    <div class="relative pt-1 mb-4">
+    <div class="overflow-hidden h-3 mb-2 text-xs flex rounded-full bg-slate-200">
+    <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-rose-500 to-red-500" style="width:10%"></div>
+    </div>
+    <div class="flex justify-between text-xs text-slate-500">
+    <span>Brainstorm</span>
+    <span>Prioritize</span>
+    <span>Define KPIs</span>
+    <span>Present</span>
+    </div>
+    <div class="absolute left-0 top-[-2px] w-full flex justify-between">
+    <div class="w-2.5 h-2.5 rounded-full bg-rose-500 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white"></div>
+    </div>
+    </div>
+    <div class="flex items-center justify-between mt-6">
+    <div class="flex -space-x-2">
+    <img alt="User 1" class="inline-block size-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq-S7PM3u1BKN7siw5xhPCvO-b1EHFU3tw7ewvAixzteQ3VW_zGOLt9Eoia1syp0HA3cEkkIKnQE6h0YdGFD0Jc-MIaaDu_HULBzjHe_xyJmZpaGaZrgXuhEUMxaDeoYOmuB4u1VunkgoiNoW7i1-Fbon1q_IOAhtjMlz6c36Om74WDRpNdiMwPZlRl2ni_VNqlorwhn83VgxEnKfuOiRz3qTo9GU7EanIoOzNbELIFINNln90j8-wMG1fXfcw3REoY_zrfQGnDLSX"/>
+    <img alt="User 2" class="inline-block size-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvTC6VQw45EiTAeTebqqmjvUQlCSYWJNVuXcMzwCErFw4k4crJpxHw_-kQXrehTo6KG-rUTyB95p2sMvPmdjeLSQzeDexNAJO2nLKy7W0aFwZsaaJihEwd9L3oa4tfyda2yIMqki_X3Hi1G0kYgufbI9MTfQywfXL0Bj2VLZUzWE6MjgpkfUtVfA-KgmhpOHK3owxJ_uHxMIKgFRnJau4X8nVkmaYfmOo3Hx_H_8FzPwnaUw1klvdz58tBT2g-vXfLhASWFdUzIzy5"/>
+    </div>
+    <div class="flex items-center gap-2">
+    <button class="flex items-center justify-center gap-2 rounded-lg border border-slate-300 hover:border-blue-500 px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-blue-600 transition-colors">
+    <span class="material-icons text-sm">chat_bubble_outline</span>
+                                                Inquire with Assistant
+                                            </button>
+    <button class="flex items-center justify-center rounded-full border-2 border-slate-300 group-hover:border-green-500 size-8 shrink-0 text-transparent group-hover:text-green-500 transition-colors">
+    <span class="material-icons text-lg">check</span>
+    </button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </main>
+    </div>
+    </div>
+    </div>
+    </body></html>
