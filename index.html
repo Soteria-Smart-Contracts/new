@@ -225,38 +225,4 @@
     </main>
     </div>
     </div>
-    <script>
-        const chatTextarea = document.getElementById('chat-textarea');
-        const initialConsole = document.getElementById('initial-console');
-        const chatInterface = document.getElementById('chat-interface');
-        const chatInputContainer = document.getElementById('chat-input-container');
-        const actionButtonsContainer = document.getElementById('action-buttons-container');
-        chatTextarea.addEventListener('focus', () => {
-          initialConsole.classList.add('hidden');
-          chatInterface.classList.remove('hidden');
-          chatInputContainer.classList.remove('chat-input-initial');
-          chatInputContainer.classList.add('chat-input-focused');
-          actionButtonsContainer.classList.add('hidden');
-        });
-        // Optional: Add a way to revert to initial state if textarea is empty and blurred
-        chatTextarea.addEventListener('blur', () => {
-            if (chatTextarea.value === '') {
-                // Debounce or delay this to prevent flickering if user clicks send button
-                setTimeout(() => {
-                    if (document.activeElement !== chatTextarea && chatTextarea.value === '') { // Check again if focus is lost
-                        initialConsole.classList.remove('hidden');
-                        chatInterface.classList.add('hidden');
-                        chatInputContainer.classList.add('chat-input-initial');
-                        chatInputContainer.classList.remove('chat-input-focused');
-                        actionButtonsContainer.classList.remove('hidden');
-                    }
-                }, 100);
-            }
-        });
-        // Auto-resize textarea
-        chatTextarea.addEventListener('input', function() {
-            this.style.height = 'auto';
-            this.style.height = (this.scrollHeight) + 'px';
-        });
-      </script>
     </body></html>
