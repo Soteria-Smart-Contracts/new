@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Point Plotter with Entry Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #entry-form {
+            margin-bottom: 20px;
+            width: 400px;
+        }
+        #entry-form input, #entry-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        #graph-container {
+            width: 90%;
+            max-width: 1200px;
+            height: 600px;
+            margin-bottom: 40px;
+        }
+        #entries-table {
+            width: 90%;
+            max-width: 1200px;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        #entries-table th, #entries-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        #entries-table th {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            padding: 5px 10px;
+            margin: 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 3px;
+        }
+        .edit-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        .save-btn, .cancel-btn {
+            background-color: #008CBA;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Point Plotter with Entry Management</h1>
+        <form id="entry-form">
+            <h2>Add/Edit Entry</h2>
+            <input type="date" id="date-input" required>
+            <input type="number" id="value-input" placeholder="Enter value (0-200)" min="0" max="200" required>
+            <button type="submit" id="add-btn">Add Entry</button>
+            <button type="button" id="cancel-btn" style="display: none;">Cancel</button>
+        </form>
+
+        <div id="graph-container">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <table id="entries-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Value</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Entries will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('myChart').getContext('2d');
+            let chart = null;
+            const entriesKey = 'plottedPoints';
+            const entryForm = document.getElementById('entry-form');
+            const addBtn = document.getElementById('add-btn');
+            const cancelBtn = document.getElementById('cancel-btn');
+            const dateInput = document.getElementById('date-input');
+            const valueInput = document.getElementById('value-input');
+
+            // Function to load entries from Local Storage
+            function loadEntries() {
+                const entries = JSON.parse(localStorage.getItem(entriesKey)) || [];
+                return entries;
+            }
+
+            // Function to save entries to Local Storage
+            function saveEntries(entries) {
+                localStorage.setItem(entriesKey, JSON.stringify(entries));
+            }
+
+            // Function to render the graph
+            function renderGraph(entries) {
+                const labels = entries.map(entry => entry.date);
+                const data = entries.map(entry => entry.value);
+
+                if (chart) {
+                    chart.destroy();
+                }
+
+                chart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Values',
+                            data: data,
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Date'
+                                }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                max: 200,
+                                title: {
+                                    display: true,
+                                    text: 'Value'
+                                }
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Plotted Points'
+                            },
+                            tooltip: {
+                                mode: 'index',
+                                intersect: false,
+                            },
+                            legend: {
+                                display: true,
+                                position: 'top',
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Function to render the table
+            function renderTable(entries) {
+                const tbody = document.querySelector('#entries-table tbody');
+                tbody.innerHTML = '';
+
+                entries.forEach((entry, index) => {
+                    const tr = document.createElement('tr');
+
+                    const dateTd = document.createElement('td');
+                    dateTd.textContent = entry.date;
+                    tr.appendChild(dateTd);
+
+                    const valueTd = document.createElement('td');
+                    valueTd.textContent = entry.value;
+                    tr.appendChild(valueTd);
+
+                    const actionsTd = document.createElement('td');
+
+                    const editBtn = document.createElement('button');
+                    editBtn.textContent = 'Edit';
+                    editBtn.className = 'btn edit-btn';
+                    editBtn.addEventListener('click', () => editEntry(index, entry));
+                    actionsTd.appendChild(editBtn);
+
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.textContent = 'Delete';
+                    deleteBtn.className = 'btn delete-btn';
+                    deleteBtn.addEventListener('click', () => deleteEntry(index));
+                    actionsTd.appendChild(deleteBtn);
+
+                    tr.appendChild(actionsTd);
+
+                    tbody.appendChild(tr);
+                });
+            }
+
+            // Function to edit an entry
+            function editEntry(index, entry) {
+                dateInput.value = entry.date;
+                valueInput.value = entry.value;
+                addBtn.style.display = 'none';
+                cancelBtn.style.display = 'inline-block';
+                entryForm.dataset.index = index;
+            }
+
+            // Function to delete an entry
+            function deleteEntry(index) {
+                const entries = loadEntries();
+                entries.splice(index, 1);
+                saveEntries(entries);
+                renderTable(entries);
+                renderGraph(entries);
+            }
+
+            // Function to cancel editing
+            cancelBtn.addEventListener('click', () => {
+                dateInput.value = '';
+                valueInput.value = '';
+                addBtn.style.display = 'inline-block';
+                cancelBtn.style.display = 'none';
+                entryForm.removeAttribute('data-index');
+            });
+
+            // Function to handle form submission
+            entryForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const date = dateInput.value;
+                const value = parseInt(valueInput.value, 10);
+
+                if (value < 0 || value > 200) {
+                    alert('Please enter a value between 0 and 200.');
+                    return;
+                }
+
+                let entries = loadEntries();
+                const index = entryForm.dataset.index;
+
+                if (index) {
+                    entries[index].date = date;
+                    entries[index].value = value;
+                } else {
+                    entries.push({ date, value });
+                }
+
+                saveEntries(entries);
+                renderTable(entries);
+                renderGraph(entries);
+
+                // Reset the form
+                dateInput.value = '';
+                valueInput.value = '';
+                addBtn.style.display = 'inline-block';
+                cancelBtn.style.display = 'none';
+                entryForm.removeAttribute('data-index');
+            });
+
+            // Initial render
+            const entries = loadEntries();
+            renderTable(entries);
+            renderGraph(entries);
+        });
+    </script>
+</body>
+</html>
